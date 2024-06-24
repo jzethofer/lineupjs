@@ -1,0 +1,3 @@
+/*! lineupjs - v4.11.0 - 2024
+* https://lineup.js.org
+* Copyright (c) 2024 Samuel Gratzl; Licensed BSD-3-Clause */
