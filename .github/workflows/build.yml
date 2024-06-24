@@ -39,6 +39,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f public/main/
+          BRANCH="build"
+          git push origin --delete $BRANCH || true
+          git checkout --orphan $BRANCH
+          git add -fA build
           git commit -m "Deploy build output"
-          git push -f origin `echo $GITHUB_REF | sed -e 's/refs\\/heads\\///'`:`echo $GITHUB_REF | sed -e 's/refs\\/heads\\///'`-build
+          git push -f origin $BRANCH
