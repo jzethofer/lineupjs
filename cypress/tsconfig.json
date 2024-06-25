@@ -1,0 +1,26 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "es5",
+    "outDir": "./integration",
+    "rootDir": "./integration",
+    "declaration": false,
+    "declarationMap": false,
+    "composite": false,
+    "verbatimModuleSyntax": false,
+    "types": [
+      "cypress",
+      "d3-color",
+      "d3-dispatch",
+      "d3-format",
+      "d3-scale",
+      "d3-scale-chromatic",
+      "d3-time",
+      "d3-time-format",
+      "detect-browser",
+      "lodash.get"
+    ]
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["**/*.d.ts"]
+}
