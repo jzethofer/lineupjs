@@ -52,9 +52,7 @@ export class ReplacementColorMappingFunction implements ICategoricalColorMapping
     const lookup = new Map(categories.map((d) => [d.name, d]));
     const r = new Map<ICategory, string>();
     for (const key of Object.keys(dump)) {
-      if (lookup.has(key)) {
-        r.set(lookup.get(key)!, dump[key]);
-      }
+      r.set(lookup.get(key)!, dump[key]);
     }
     return new ReplacementColorMappingFunction(r);
   }
