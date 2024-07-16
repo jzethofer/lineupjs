@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "es6"
+  },
+  "typedocOptions": {
+    "name": "LineUpJS",
+    "entryPoints": "src",
+    "basePath": "./src",
+    "out": "./docs",
+    "theme": "default",
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "includeVersion": true,
+    "hideGenerator": true,
+    "exclude": "**/*.(d.ts|js|spec.ts|scss)"
+  }
+}
