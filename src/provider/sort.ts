@@ -34,7 +34,7 @@ function chooseMissingByLength(length: number) {
 function toCompareLookUp(rawLength: number, type: ECompareValueType): ILookUpArray {
   switch (type) {
     case ECompareValueType.COUNT:
-      return createIndexArray(rawLength + 1);
+      return createIndexArray(1000000);
     case ECompareValueType.BINARY:
     case ECompareValueType.UINT8:
       return new Uint8Array(rawLength);
@@ -113,6 +113,7 @@ export class CompareLookup {
       const v = isSorting ? c.col.toCompareValueType() : c.col.toCompareGroupValueType();
       const valueCache = valueCaches ? valueCaches(c.col) : undefined;
       this.criteria.push({ col: c.col, valueCache });
+      debugger;
       if (!Array.isArray(v)) {
         const lookup = toCompareLookUp(rawLength, v);
         this.data.push({ asc: c.asc, v, lookup, setter: createSetter(v, lookup, missingCount) });
